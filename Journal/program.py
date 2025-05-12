@@ -3,11 +3,13 @@ def main():
     run_event_loop()
 
 
+
 def print_header():
     print('------------------------------')
     print('         Dear Diary')
     print('------------------------------')
     
+
 
 def run_event_loop():
     print('What do you want to do with your journal?')
@@ -31,8 +33,6 @@ def run_event_loop():
 def list_entries(data):
     print('Your jounral entries:' )
     entries = reversed(data)
-    
-    #This will generate tuples for the journal entries.
     for idx, entry in enumerate(entries):
 
         print('* [{}] {}'.format(idx + 1, entry))
