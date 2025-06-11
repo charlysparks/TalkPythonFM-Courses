@@ -44,8 +44,8 @@ def list_entries(data):
 
 def add_entry(data):
     text = input('Type your entry, <enter> to to exit: ')
+    journal.add_entry(text)
     data.append(text)
-
 
 
 main() 
