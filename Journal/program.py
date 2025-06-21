@@ -18,7 +18,7 @@ def run_event_loop():
     print('What do you want to do with your journal?')
     cmd = None
     journal_name = 'default'
-    journal_data = journal.load(journal_name)  #[]  # list()
+    journal_data = journal.load(journal_name)
 
 
     while cmd != 'x':
@@ -32,20 +32,23 @@ def run_event_loop():
         elif cmd != 'x':
             print("Sorry, we don't understand '{}'.".format(cmd))
     
-    print('Done, goodbye.')
-    journal.save(journal_name, journal_data) 
+    print('Goodbye.')
+    journal.save(journal_name, journal_data)
         
 def list_entries(data):
     print('Your jounral entries:' )
     entries = reversed(data)
+    
+    #This will generate tuples for the journal entries.
     for idx, entry in enumerate(entries):
 
         print('* [{}] {}'.format(idx + 1, entry))
 
 def add_entry(data):
     text = input('Type your entry, <enter> to to exit: ')
-    journal.add_entry(text)
-    data.append(text)
+    journal.add_entry(text, data)
+    # data.append(text)
+
 
 
 main() 
