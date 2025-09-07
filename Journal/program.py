@@ -16,9 +16,9 @@ def print_header():
 
 def run_event_loop():
     print('What do you want to do with your journal?')
-    cmd = None
+    cmd = 'EMPTY'
     journal_name = 'default'
-    journal_data = journal.load(journal_name)
+    journal_data = journal.load(journal_name) # [] # list()
 
 
     while cmd != 'x':
@@ -41,7 +41,6 @@ def list_entries(data):
     
     #This will generate tuples for the journal entries.
     for idx, entry in enumerate(entries):
-
         print('* [{}] {}'.format(idx + 1, entry))
 
 def add_entry(data):
@@ -49,6 +48,5 @@ def add_entry(data):
     journal.add_entry(text, data)
     # data.append(text)
 
-
-
-main() 
+if __name__ == '__main__':
+    main() 

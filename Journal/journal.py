@@ -3,7 +3,7 @@ import os
 def load(name):
     # todo: populate from file if it exists
     data = []
-    filname = get_full_pathname(name)
+    filename = get_full_pathname(name)
 
     if os.path.exists(filename):
         with open(filename) as fin:
